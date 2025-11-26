@@ -138,5 +138,5 @@ const postfijo = arbol.convertirInfijoAPostfijo("3+4*2/7-1");
 arbol.construirArbol(postfijo);
 console.log(arbol.preorden().join(" "));
 console.log(arbol.postorden().join(" "));
-console.log(arbol.resolverPreorden("- + 3 / * 4 3 7 2").toFixed(2));
-console.log(arbol.resolverPostorden("3 4 3 * 7 / + 2 -").toFixed(2));
+console.log("Resultado preorden: " + arbol.resolverPreorden("- + 3 / * 4 3 7 2").toFixed(2));
+console.log("Resultado postorden: " + arbol.resolverPostorden("3 4 3 * 7 / + 2 -").toFixed(2));
