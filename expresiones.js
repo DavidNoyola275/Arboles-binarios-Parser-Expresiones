@@ -99,10 +99,9 @@ class ExpresionArbol {
     };
   }
 
-  resolverPreorden(expresion) { // RID
-    //Resuelve la expresión en preorden
+  resolverPreorden(expresion) { // RID. Resuelve la expresión en preorden
     const tokens = expresion.split(" "); //Divide la expresión en tokens
-    tokens.reverse(); //Invierte los tokens para poder recorrerlos fácilmente
+    tokens.reverse(); //Invierte los tokens para poder recorrerlos
     const pila = []; //Pila para almacenar valores
 
     for (let token of tokens) {
@@ -136,13 +135,10 @@ class ExpresionArbol {
     const tokens = expresion.split(" "); //Divide la expresión en tokens
     const pila = []; //Pila para almacenar valores
 
-    for (let token of tokens) {
-      //Recorre cada token de izquierda a derecha
-      if (!isNaN(token)) {
-        //Si es un número
+    for (let token of tokens) { //Recorre cada token de tokens
+      if (!isNaN(token)) { //Si es un número
         pila.push(Number(token)); //Lo agrega a la pila
-      } else {
-        //Si es un operador
+      } else { //Si es un operador
         const b = pila.pop(); //Saca el último número de la pila
         const a = pila.pop(); //Saca el penúltimo número de la pila
         const resultado = this._operacionPostOrden(token, a, b); //Realiza la operación
